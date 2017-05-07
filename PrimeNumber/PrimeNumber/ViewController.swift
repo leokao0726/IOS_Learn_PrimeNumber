@@ -10,9 +10,12 @@ import UIKit
 
 class ViewController: UIViewController {
     
+
+    @IBAction func viewClick(_ sender: UIControl) {
+            self.view.endEditing(true)
+    }
     @IBOutlet weak var result_Label: UILabel!
     @IBOutlet weak var inputTextField: UITextField!
-    
     @IBAction func checkBtn(_ sender: UIButton) {
         if let inputNum = Int(inputTextField.text!){
             result_Label.text = checkPrime(textNum: inputNum)
@@ -20,7 +23,7 @@ class ViewController: UIViewController {
             result_Label.text = "you enter wrong type."
         }
         result_Label.isHidden = false
-
+        inputTextField.text = ""
     }
     override func viewDidLoad() {
         super.viewDidLoad()

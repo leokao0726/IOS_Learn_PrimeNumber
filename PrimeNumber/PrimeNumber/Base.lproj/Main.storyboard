@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -17,7 +17,7 @@
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" customClass="UIControl">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -54,11 +54,12 @@
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done"/>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="B0y-Ns-ZUd" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="4Pf-Rb-OtB"/>
                             <constraint firstItem="Jp5-HG-vKU" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Cgi-FJ-dUT"/>
                             <constraint firstItem="B0y-Ns-ZUd" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="DHo-RS-Bjv"/>
                             <constraint firstItem="BW6-Fu-TWA" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Rnz-Zp-HnB"/>
@@ -66,14 +67,16 @@
                             <constraint firstItem="Jp5-HG-vKU" firstAttribute="top" secondItem="086-VY-58P" secondAttribute="bottom" constant="67" id="aHN-5S-SYK"/>
                             <constraint firstItem="BW6-Fu-TWA" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="fa5-AQ-Hut"/>
                             <constraint firstItem="086-VY-58P" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="h6D-99-jRb"/>
-                            <constraint firstItem="B0y-Ns-ZUd" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="kYA-fI-62X"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="f1W-dS-LxQ" secondAttribute="bottom" constant="110" id="yO2-vp-Dau"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="f1W-dS-LxQ" secondAttribute="bottom" constant="110" id="ytF-je-qbk"/>
                             <constraint firstItem="086-VY-58P" firstAttribute="top" secondItem="B0y-Ns-ZUd" secondAttribute="bottom" constant="68" id="zvu-ud-xtw"/>
                         </constraints>
+                        <connections>
+                            <action selector="viewClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VQ4-PY-eGt"/>
+                        </connections>
                     </view>
                     <connections>
-                        <outlet property="inputTextField" destination="BW6-Fu-TWA" id="B9I-Md-xJ3"/>
-                        <outlet property="result_Label" destination="Jp5-HG-vKU" id="07h-Tc-QTD"/>
+                        <outlet property="inputTextField" destination="BW6-Fu-TWA" id="NiX-F9-Yjs"/>
+                        <outlet property="result_Label" destination="Jp5-HG-vKU" id="iY4-zy-zXs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
