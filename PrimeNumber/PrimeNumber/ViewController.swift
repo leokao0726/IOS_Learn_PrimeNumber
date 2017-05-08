@@ -18,11 +18,13 @@ class ViewController: UIViewController {
     @IBOutlet weak var inputTextField: UITextField!
     @IBAction func checkBtn(_ sender: UIButton) {
         if let inputNum = Int(inputTextField.text!){
-            result_Label.text = checkPrime(textNum: inputNum)
+            checkPrime(testNumber: inputNum)  {
+                self.result_Label.text = $0
+                self.result_Label.isHidden = false
+            }
         }else{
             result_Label.text = "you enter wrong type."
         }
-        result_Label.isHidden = false
         inputTextField.text = ""
     }
     override func viewDidLoad() {
@@ -60,6 +62,10 @@ class ViewController: UIViewController {
             
         
         }
+    }
+    
+    func checkPrime(testNumber number:Int, withCompletionHandler handler:(String)->()){
+        handler(checkPrime(textNum: number))
     }
 
 
